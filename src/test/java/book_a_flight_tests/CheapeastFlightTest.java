@@ -16,6 +16,7 @@ public class CheapeastFlightTest extends BaseTest {
         flightsPage.chooseFutureDate();
         flightsPage.chooseAdultAndEconomy();
         GeneratedFlightPage currentFlight = flightsPage.searchForFlights();
+        currentFlight.checkForCorrectDates();
         currentFlight.sortByCheapest();
         currentFlight.checkThatLowestPriceIsCorrect();
     }

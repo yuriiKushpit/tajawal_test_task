@@ -26,9 +26,11 @@ public class FlightsPage extends BasePage {
     private final static String[] orgins = {"DXB", "AUH", "SHJ", "JED", "RUH"};
     private final static String[] destanations = {"AMM", "CAI", "DEL", "KHI", "PAR"};
 
-    private final static int twoMonthAfterCurrent = 3;
+    final static int twoMonthAfterCurrent = 3;
 
     private final static String adultAndEconomy = "1 Adult - Economy";
+
+    static int originDate, destinationDate;
 
 
     @FindBy(id = "com.tajawal:id/origin_container")
@@ -96,8 +98,11 @@ public class FlightsPage extends BasePage {
         while (getTextOfElement(monthLabel).toLowerCase().contains(getMonthName(Calendar.getInstance().get(Calendar.MONTH) + twoMonthAfterCurrent))) {
             scroll();
         }
-        clickOnElement(days.get(getRandomNumber(firstDay, firstTenDays)));
-        clickOnElement(days.get(getRandomNumber(firstTenDays, nextDaysOfMonth)));
+        originDate = getRandomNumber(firstDay, firstTenDays);
+        destinationDate = getRandomNumber(firstTenDays, nextDaysOfMonth);
+
+        clickOnElement(days.get(originDate));
+        clickOnElement(days.get(destinationDate));
         clickOnElement(confirmButton);
     }
 

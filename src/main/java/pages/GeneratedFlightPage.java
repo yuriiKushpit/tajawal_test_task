@@ -6,6 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.util.Assert;
 
+import java.util.Calendar;
+
+import static pages.FlightsPage.destinationDate;
+import static pages.FlightsPage.originDate;
+import static pages.FlightsPage.twoMonthAfterCurrent;
+import static utils.Dates.getMonthName;
+
 public class GeneratedFlightPage extends BasePage {
 
     private static String lowestPrice;
@@ -30,6 +37,15 @@ public class GeneratedFlightPage extends BasePage {
 
     public GeneratedFlightPage(AndroidDriver<MobileElement> driver) {
         super(driver);
+    }
+
+    public void checkForCorrectDates(){
+        String dateFromApp = getTextOfElement(flightDatesTitle);
+        String formattedDate = dateFromApp.replaceAll(" ","").toLowerCase();
+        String actualResult = formattedDate.substring(formattedDate.indexOf("-")+1);
+        String shortMonth = getMonthName(Calendar.getInstance().get(Calendar.MONTH) + twoMonthAfterCurrent).substring(0, 3);
+        String expectedResult = shortMonth + originDate + "-" + shortMonth + destinationDate;
+        Assert.isTrue(actualResult.equals(expectedResult));
     }
 
     public void sortByCheapest(){
