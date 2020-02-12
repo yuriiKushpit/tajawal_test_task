@@ -1,5 +1,6 @@
 package pages;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -72,7 +73,7 @@ public class FlightsPage extends BasePage {
     private WebElement decreaseNumberOfAdults;
 
 
-    FlightsPage(AndroidDriver driver) {
+    FlightsPage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
 

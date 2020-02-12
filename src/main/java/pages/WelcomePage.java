@@ -1,5 +1,6 @@
 package pages;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +19,7 @@ public class WelcomePage extends BasePage{
     @FindBy(id = "com.tajawal:id/flightButton")
     private WebElement flightsButton;
 
-    public WelcomePage(AndroidDriver driver){
+    public WelcomePage(AndroidDriver<MobileElement> driver){
         super(driver);
     };
 

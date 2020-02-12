@@ -1,5 +1,6 @@
 package pages;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.Dimension;
@@ -16,9 +17,9 @@ public abstract class BasePage {
 
     private static final int defaultTimeWait = 60;
 
-    protected AndroidDriver driver;
+    protected AndroidDriver<MobileElement> driver;
 
-    public BasePage(AndroidDriver driver) {
+    public BasePage(AndroidDriver<MobileElement> driver) {
         this.driver = driver;
     }
 

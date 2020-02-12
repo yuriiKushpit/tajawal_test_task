@@ -1,5 +1,6 @@
 package pages;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,7 +28,7 @@ public class GeneratedFlightPage extends BasePage {
     @FindBy(id = "com.tajawal:id/tvPriceRangeBarFrom")
     private WebElement lowestRange;
 
-    public GeneratedFlightPage(AndroidDriver driver) {
+    public GeneratedFlightPage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
 
