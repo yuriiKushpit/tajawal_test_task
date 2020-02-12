@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="BookAFlight" verbose="5" >
+	<test name="CheapestFlight">
+		<classes>
+		  <class name="book_a_flight_tests.CheapeastFlightTest"/>
+		</classes>
+	</test>	  
+</suite>
