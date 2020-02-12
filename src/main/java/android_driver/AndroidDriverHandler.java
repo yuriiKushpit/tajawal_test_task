@@ -41,7 +41,7 @@ public class AndroidDriverHandler {
             //load a properties file from class path, inside static method
             prop.load(input);
 
-            File app  = new File("/home/ykushpit/Desktop/test_task/src/main/resources/tajawal.apk");
+            File app  = new File("src/main/resources/tajawal.apk");
             //get the property value and print it out
             capabilities = new DesiredCapabilities();
             capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
