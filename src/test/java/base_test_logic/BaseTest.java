@@ -6,8 +6,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import pages.WelcomePage;
 
 public class BaseTest {
@@ -15,14 +15,14 @@ public class BaseTest {
 
     protected WelcomePage welcomePage;
 
-    @BeforeMethod
+    @BeforeTest
     public void setup() throws Exception {
         driver = AndroidDriverHandler.getDriverInstance();
         welcomePage = PageFactory.initElements(driver, WelcomePage.class);
         welcomePage.setEnglishLanguage();
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown() throws Exception {
             driver.quit();
     }
