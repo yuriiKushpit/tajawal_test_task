@@ -19,27 +19,28 @@
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <appium.version>7.1.0</appium.version>
+        <selenium.version>3.14.0</selenium.version>
+        <testng.version>6.14.3</testng.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>7.1.0</version>
+            <version>${appium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
-            <version>3.14.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.mfulton26.ctrl4testng</groupId>
-            <artifactId>ctrl4testng</artifactId>
-            <version>1.1</version>
-            <scope>test</scope>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.14.3</version>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
